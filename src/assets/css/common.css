@@ -1,0 +1,15 @@
+@charset "utf-8"; 
+/* 
+@作者: 徐横峰
+@邮箱：564297479@qq.com
+@功能: 公共样式 
+*/
+
+
+/* 无数据 */
+.noData{
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    color: #ccc;
+}

@@ -1,0 +1,45 @@
+@charset "utf-8"; 
+/* 
+@作者: 徐横峰
+@邮箱：564297479@qq.com
+@功能: 覆盖primeNg样式
+*/ 
+
+/* ----------------------全局样式覆盖--------------------------- */
+/* 按钮 */
+.ui-button{
+    margin-right: 10px;
+}
+
+/* 下拉选框 */
+.ui-dropdown-panel .ui-dropdown-item{
+    white-space: nowrap;
+}
+
+/* 对话框 */
+.ui-dialog{
+    width: 900px;
+    padding-bottom: 20px;
+}
+
+/* 操作面板 */
+.ui-tabview-panel{
+    border: none;
+    height: 500px;
+    overflow-y: auto;
+}
+.ui-widget-content{
+    border: none!important;
+}
+
+
+/* ---------------------局部样式覆盖--------------------------- */
+.header /deep/ .ui-dropdown{
+    width: 100px!important;
+}
+.odialog2 /deep/ .ui-dialog{
+    width: auto;
+}
+.odialogfour /deep/ .ui-dialog{
+    width:1025px;
+}

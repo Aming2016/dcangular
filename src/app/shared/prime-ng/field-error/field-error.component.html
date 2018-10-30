@@ -1,0 +1,26 @@
+  <ul *ngIf="getControl()?.dirty && fieldErrors != null">
+    <li *ngIf="fieldErrors['email']">
+      {{fieldLabel}}电子邮件格式错误.
+    </li>
+    <li *ngIf="fieldErrors['min']">
+      {{fieldLabel}}值不能小于{{fieldErrors['requiredValue']}}.
+    </li>
+    <li *ngIf="fieldErrors['max']">
+      {{fieldLabel}}值不能大于{{fieldErrors['requiredValue']}}.
+    </li>
+    <li *ngIf="fieldErrors['minlength']">
+      {{fieldLabel}}长度不能小于 {{fieldErrors['minlength']['requiredLength']}}.
+    </li>
+    <li *ngIf="fieldErrors['maxlength']">
+      {{fieldLabel}}长度不能大于 {{fieldErrors['maxlength']['requiredLength']}}.
+    </li>
+    <li *ngIf="fieldErrors['pattern']">
+      {{fieldLabel}}格式错误.
+    </li>
+    <li *ngIf="fieldErrors['required']">
+      {{fieldLabel}}必须填写.
+    </li>
+    <li *ngIf="fieldErrors['phone']">
+      {{fieldLabel}}不合法.
+    </li>
+  </ul>

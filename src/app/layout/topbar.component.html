@@ -1,0 +1,135 @@
+<div class="layout-topbar">
+    <img alt="logo" src="assets/layout/images/logo-slim.png" class="mobile-logo"/>
+
+    <a class="menu-btn" (click)="layout.onMenuButtonClick($event)">
+        <i class="material-icons">&#xE5D2;</i>
+    </a>
+
+    <a class="topbar-menu-btn" (click)="layout.onTopbarMobileMenuButtonClick($event)">
+        <i class="material-icons">&#xE853;</i>
+    </a>
+
+
+    <div class="layout-topbar-menu-wrapper">
+        <ul class="topbar-menu fadeInDown" [ngClass]="{'topbar-menu-active': layout.topbarMenuActive}" (click)="layout.onTopbarMenuClick($event)">
+            <li #profile class="profile-item" [ngClass]="{'active-topmenuitem': layout.activeTopbarItem === profile}" (click)="layout.onTopbarRootItemClick($event, profile)">
+                <a>
+                    <span class="profile-image-wrapper">
+                        <img *ngIf="img" src={{img}} onerror="this.src='assets/layout/images/shihua.png'" style="border-radius: 50%"/>
+                    </span>
+                    <span class="topbar-item-name profile-name">{{userName}}</span>
+                </a>
+
+                <ul class="fadeInDown">
+                  <li role="menuitem">
+                    <a (click)="logoOut()">
+                      <i class="material-icons">exit_to_app</i>
+                      <span>退出系统</span>
+                    </a>
+                  </li>
+                </ul>
+            </li>
+
+
+            <li #settings [ngClass]="{'active-topmenuitem':layout.activeTopbarItem === settings}" (click)="layout.onTopbarRootItemClick($event, settings)">
+                <a>
+                    <i class="topbar-icon material-icons">settings</i>
+                    <span class="topbar-item-name">Settings</span>
+                </a>
+                <ul class="fadeInDown">
+                    <li role="menuitem">
+                        <a>
+                            <i class="material-icons">palette</i>
+                            <span>Change Theme</span>
+                        </a>
+                    </li>
+                    <li role="menuitem">
+                        <a>
+                            <i class="material-icons">star</i>
+                            <span>Favorites</span>
+                        </a>
+                    </li>
+                    <li role="menuitem">
+                        <a>
+                            <i class="material-icons">lock</i>
+                            <span>Lock Screen</span>
+                        </a>
+                    </li>
+                    <li role="menuitem">
+                        <a>
+                            <i class="material-icons">wallpaper</i>
+                            <span>Wallpaper</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+          <li #messages [ngClass]="{'active-topmenuitem':layout.activeTopbarItem === messages}" (click)="layout.onTopbarRootItemClick($event, messages)">
+            <a href="#">
+              <i class="topbar-icon material-icons animated swing">&#xE0C9;</i>
+              <span *ngIf="unreadMsgCount > 0" class="topbar-badge animated rubberBand">{{unreadMsgCount}}</span>
+              <span class="topbar-item-name">Messages</span>
+            </a>
+            <ul class="fadeInDown">
+              <li role="menuitem">
+                <a href="#" class="topbar-message">
+                  <img src="assets/layout/images/avatar1.png" width="35"/>
+                  <span>Give me a call</span>
+                </a>
+              </li>
+              <li role="menuitem">
+                <a href="#" class="topbar-message">
+                  <img src="assets/layout/images/avatar2.png" width="35"/>
+                  <span>Sales reports attached</span>
+                </a>
+              </li>
+              <li role="menuitem">
+                <a href="#" class="topbar-message">
+                  <img src="assets/layout/images/avatar3.png" width="35"/>
+                  <span>About your invoice</span>
+                </a>
+              </li>
+              <li role="menuitem">
+                <a href="#" class="topbar-message">
+                  <img src="assets/layout/images/avatar2.png" width="35"/>
+                  <span>Meeting today at 10pm</span>
+                </a>
+              </li>
+              <li role="menuitem">
+                <a href="#" class="topbar-message">
+                  <img src="assets/layout/images/avatar4.png" width="35"/>
+                  <span>Out of office</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li #addFavorites pTooltip="添加到收藏" tooltipPosition="left" tooltipZIndex="9999999" [ngClass]="{'active-topmenuitem':layout.activeTopbarItem === addFavorites}" (click)="layout.onTopbarRootItemClick($event, addFavorites);addFav()">
+            <a>
+              <i *ngIf="isStared" class="topbar-icon material-icons">star</i>
+              <i *ngIf="!isStared" class="topbar-icon material-icons">star_border</i>
+              <span class="topbar-item-name">添加收藏</span>
+            </a>
+          </li>
+          <li *ngIf="items !=null && items.length > 0" pTooltip="我的收藏夹" tooltipPosition="left" tooltipZIndex="9999999" #favorites [ngClass]="{'active-topmenuitem':layout.activeTopbarItem === favorites}" (click)="layout.onTopbarRootItemClick($event, favorites)">
+            <a>
+              <i class="topbar-icon material-icons">menu</i>
+              <span class="topbar-item-name">我的收藏夹</span>
+            </a>
+            <ul class="fadeInDown">
+              <li *ngFor="let item of items" [routerLink]="item.routerLink" >
+                <a>
+                  <i *ngIf="!!item.icon" class="material-icons">{{item.icon}}</i>
+                  <span>{{item.label}}</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+            <li class="search-item">
+                <span class="md-inputfield">
+                    <input type="text" pInputText />
+                    <label>Search</label>
+                    <i class="topbar-icon material-icons">search</i>
+                </span>
+            </li>
+        </ul>
+    </div>
+</div>

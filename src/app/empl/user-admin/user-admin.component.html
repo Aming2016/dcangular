@@ -1,0 +1,152 @@
+
+<!-- author: 徐横峰修改 
+    date: 2018/9/25 -->
+<div class="header">
+    <ul>
+        <li>
+            <span>子公司 : </span><app-single-company-option-drown></app-single-company-option-drown>
+            <span>部门 : </span><p-dropdown [options]="department" [(ngModel)]="departmentValue"></p-dropdown>
+        </li>
+        <li>
+            <span>智能查询 : </span><p-dropdown [options]="search" [(ngModel)]="searchValue"></p-dropdown>
+            <span>状态 : </span><p-dropdown [options]="isJobing" [(ngModel)]="jobingValue"></p-dropdown>
+            <p-button class="search" label="查询" styleClass="ui-button-info"></p-button>
+        </li>
+    </ul>
+    <div class="groupBtn">
+        <span class="userManager">用户管理</span> 
+        <p-button class="btn" label="新增" styleClass="ui-button-info" (click)="addUser()"></p-button>
+        <p-button class="btn" label="删除" styleClass="ui-button-info" (click)="deleteUser()"></p-button>
+    </div>
+</div>
+
+<div class="table">
+    <p-table [value]="users" [columns]="cols" [(selection)] = "selectedUser">
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th style="width:120px"><p-tableHeaderCheckbox></p-tableHeaderCheckbox> 全选</th>
+                <th *ngFor="let c of columns">{{c.header}}</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <tr [pSelectableRow]="rowData">
+                <td><p-tableCheckbox [value]="rowData"></p-tableCheckbox></td>
+                <td *ngFor="let col of columns">{{rowData[col.field]}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+    <div class="noData" *ngIf="noUserData">暂无用户</div>
+    <p-paginator [rows]="10" [totalRecords]="100"></p-paginator>
+</div>
+
+<!-- 删除 -->
+<p-confirmDialog header="批量删除" icon="pi pi-exclamation-triangle" width="425"></p-confirmDialog>
+<!-- 新增 -->
+<p-dialog class="odialog" header="新增用户" [(visible)]="isDisplay">
+    <p-tabView>
+        <p-tabPanel header="基本信息" class="one">
+            <div class="fl l-content">
+                <ul>
+                    <li><span>子公司:</span><app-single-company-option-drown></app-single-company-option-drown></li>
+                    <li><span>姓名:</span><input type="text" pInputText [(ngModel)]="addUser.emplName" /></li>
+                    <li><span>电话:</span><input type="text" pInputText [(ngModel)]="addUser.tel" /></li>
+                    <li><span>身份证号:</span><input type="text" pInputText [(ngModel)]="addUser.idNo" /></li>
+                    <li><span>银行:</span><input type="text" pInputText [(ngModel)]="addUser.bank" /></li>
+                    <li><span>银行卡号:</span><input type="text" pInputText [(ngModel)]="addUser.bankAccount" /></li>
+                    <li><span>职位:</span><p-dropdown [options]="jobName" [(ngModel)]="addUser.positionName"></p-dropdown></li>
+                    <li><span>在职状态:</span><p-dropdown [options]="isJobing" [(ngModel)]="addUser.status"></p-dropdown></li>
+                </ul>
+            </div>
+            <div class="fr r-content">
+                <ul>
+                    <li><span>部门:</span><p-dropdown [options]="department" [(ngModel)]="departmentValue"></p-dropdown></li>
+                    <li><span>账号:</span><input type="text" pInputText  [(ngModel)]="addUser.emplAcco"/></li>
+                    <li><span>性别:</span><p-dropdown [options]="sexName" [(ngModel)]="addUser.sex"></p-dropdown></li>
+                    <li><span>生日:</span><p-calendar [(ngModel)]="birthday"  dateFormat="yy-mm-dd"  [showIcon]="true" [locale]="ch"></p-calendar></li>
+                </ul>
+            </div>
+        </p-tabPanel>
+        <p-tabPanel header="权限" class="two">
+            <ul>
+                <li>
+                    <span>用户管理</span>  
+                    <span><p-checkbox [(ngModel)]="test" label="查看"></p-checkbox></span>  
+                    <span><p-checkbox [(ngModel)]="test" label="新增"></p-checkbox></span>  
+                    <span><p-checkbox [(ngModel)]="test" label="删除"></p-checkbox></span>  
+                </li>
+                <li>
+                    <span>子公司管理</span>  
+                    <span><p-checkbox [(ngModel)]="test" label="查看"></p-checkbox></span>  
+                    <span><p-checkbox [(ngModel)]="test" label="新增"></p-checkbox></span>  
+                    <span><p-checkbox [(ngModel)]="test" label="删除"></p-checkbox></span>  
+                </li>
+                <li>
+                    <span>投资项管理</span>  
+                    <span><p-checkbox [(ngModel)]="test" label="查看"></p-checkbox></span>  
+                    <span><p-checkbox [(ngModel)]="test" label="新增"></p-checkbox></span>  
+                    <span><p-checkbox [(ngModel)]="test" label="删除"></p-checkbox></span>  
+                </li>
+                <li>
+                    <span>审批</span>  
+                    <span><p-checkbox [(ngModel)]="test" label="查看"></p-checkbox></span>  
+                    <span><p-checkbox [(ngModel)]="test" label="新增"></p-checkbox></span>  
+                    <span><p-checkbox [(ngModel)]="test" label="删除"></p-checkbox></span>  
+                </li>
+                <li>
+                    <span>报表</span>  
+                    <span><p-checkbox [(ngModel)]="test" label="查看"></p-checkbox></span>  
+                    <span><p-checkbox [(ngModel)]="test" label="导出"></p-checkbox></span>  
+                </li>
+            </ul>
+        </p-tabPanel>
+        <p-tabPanel header="管辖范围" class="three">
+            <ul>
+                <li>
+                    <h4>子公司</h4>
+                    <ol><p-checkbox name="groupname" value="val1" [(ngModel)]="test"></p-checkbox>abcd</ol>
+                    <ol>
+                        <li><p-checkbox [(ngModel)]="test" label="安微马鞍山"></p-checkbox></li>
+                        <li><p-checkbox [(ngModel)]="test" label="安微马鞍山"></p-checkbox></li>
+                        <li><p-checkbox [(ngModel)]="test" label="安微马鞍山"></p-checkbox></li>
+                    </ol>
+                </li>
+                <li>
+                    <h4>fasdfad</h4>
+                    <ol>
+                        <li><p-checkbox [(ngModel)]="test" label="安微马鞍山"></p-checkbox></li>
+                        <li><p-checkbox [(ngModel)]="test" label="安微马鞍山"></p-checkbox></li>
+                        <li><p-checkbox [(ngModel)]="test" label="安微马鞍山"></p-checkbox></li>
+                    </ol>
+                </li>
+            </ul>
+        </p-tabPanel>
+        <p-tabPanel header="购买权限" class="four">
+            <div>
+                <span>股票类型:</span><p-dropdown [options]="company" [(ngModel)]="selectedCompany"></p-dropdown>
+            </div>
+            <ul>
+                <li>
+                    <h4>子公司</h4>
+                    <ol><p-checkbox name="groupname" value="val1" [(ngModel)]="test"></p-checkbox>abcd</ol>
+                    <ol>
+                        <li><p-checkbox [(ngModel)]="test" label="安微马鞍山"></p-checkbox></li>
+                        <li><p-checkbox [(ngModel)]="test" label="安微马鞍山"></p-checkbox></li>
+                        <li><p-checkbox [(ngModel)]="test" label="安微马鞍山"></p-checkbox></li>
+                    </ol>
+                </li>
+                <li>
+                    <h4>fasdfad</h4>
+                    <ol>
+                        <li><p-checkbox [(ngModel)]="test" label="安微马鞍山"></p-checkbox></li>
+                        <li><p-checkbox [(ngModel)]="test" label="安微马鞍山"></p-checkbox></li>
+                        <li><p-checkbox [(ngModel)]="test" label="安微马鞍山"></p-checkbox></li>
+                    </ol>
+                </li>
+            </ul>
+        </p-tabPanel>
+    </p-tabView>
+    <div>
+        <p-button class="fr btn" label="保存" styleClass="ui-button-info" (click)="confirmSave()"></p-button>
+        <p-button class="fr btn" label="取消" styleClass="ui-button-info" (click)="cancelDialog()"></p-button>
+    </div>
+</p-dialog>

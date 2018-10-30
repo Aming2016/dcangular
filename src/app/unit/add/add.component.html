@@ -1,0 +1,88 @@
+<div>
+  <div class="ui-g-12 ui-md-2">
+    <h2>新增户型</h2>
+  </div>
+  <div class="ui-g-12 ui-md-12">
+    <form #unitAddForm="ngForm" (ngSubmit)="onSubmit(unitAddForm)" enctype="multipart/form-data">
+      <!--查看表单值
+      {{unitAddForm.value | json}}
+      -->
+      <!--指定表单元素的值
+        {{unitAddForm?.value['fang']}}
+        -->
+      <!--表单验证值
+      form.valid = {{unitAddForm.valid}}
+      -->
+      {{unitAddForm.value | json}}
+      <div class="form-group">
+        <label>户型名称:</label>
+        <input type="text" class="form-control" name="hxname" ngModel required maxlength="30" minlength="2">
+
+        <p-dropdown [options]="fangs" ngModel [style]="{'margin-left':'20px','width':'60px'}" name="fang"  required></p-dropdown>
+        <label>房</label>
+
+        <p-dropdown [options]="tings" ngModel [style]="{'margin-left':'20px','width':'60px'}"  name="ting"  required></p-dropdown>
+        <label>厅</label>
+
+        <p-dropdown [options]="weis" [style]="{'margin-left':'20px','width':'60px'}" ngModel name="wei" required></p-dropdown>
+        <label>卫</label>
+
+        <p-dropdown [options]="yangtais" ngModel  name="yangtai" [style]="{'margin-left':'20px','width':'60px'}" required></p-dropdown>
+        <label>阳台</label>
+
+        <p-checkbox label="主力户型" [(ngModel)]="isHot" binary="true" name="ishot" [style]="{'margin-left':'20px'}"></p-checkbox>
+      </div>
+
+      <div class="form-group" style="margin-top: 15px">
+        <label>建筑面积:</label>
+        <input type="text" required ngModel name="jzmj" class="form-control" style="width: 63px;margin-right: 10px">-<input type="text" ngModel name="jzmj_max" class="form-control" style="width: 65px;margin-left: 10px">
+
+        <label style="margin-left: 20px">套内面积:</label>
+        <input type="text" required ngModel name="tnmj" class="form-control" style="width: 63px;margin-right: 10px">-<input type="text" ngModel name="tnmj_max" class="form-control" style="width: 65px;margin-left: 10px">
+
+        <label style="margin-left: 20px">售价(万元):</label>
+        <input type="text" required ngModel name="saletotal" class="form-control" style="width: 63px;margin-right: 10px">-<input type="text" ngModel name="saletotal_max" class="form-control" style="width: 65px;margin-left: 10px">
+      </div>
+
+      <div class="form-group" style="margin-top: 15px">
+        <label>户型位置:</label>
+        <input type="text" ngModel name="fangno" class="form-control">
+
+        <label style="margin-left: 20px">户型特点:</label>
+        <p-multiSelect ngModel name="hxspecial" [options]="hxspecials" defaultLabel="---多选---" [maxSelectedLabels]="12"></p-multiSelect>
+      </div>
+
+      <div class="form-group" style="margin-top: 15px">
+        <label>类型: </label>
+        <p-dropdown ngModel name="htype" [options]="types"></p-dropdown>
+
+        <label>朝向:</label>
+        <p-dropdown [options]="orientation" ngModel name="cx"></p-dropdown>
+
+        <label>状态:</label>
+        <p-dropdown [options]="state" ngModel name="salestatu"></p-dropdown>
+      </div>
+
+      <div class="form-group" style="margin-top: 15px">
+        <h5>备注：</h5>
+        <textarea ngModel name="memo" [rows]="5" [cols]="80" pInputTextarea autoResize="autoResize"></textarea>
+      </div>
+
+      <div class="form-group" style="margin-top: 15px">
+        <h5>上传图片:</h5>
+        <p-fileUpload name="uploadImage" url="http://127.0.0.1:8000/form/" multiple="multiple" accept="image/*" maxFileSize="1000000" (onUpload)="onUpload($event)">
+          <ng-template pTemplate type="content">
+            <ul *ngIf="uploadedFiles.length">
+              <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+            </ul>
+          </ng-template>
+        </p-fileUpload>
+      </div>
+
+      <input type="submit" [disabled]="!unitAddForm.valid"/>
+    </form>
+  </div>
+  <div class="ui-g-3 ui-md-3">
+    <p-tree [value]="organizations" selectionMode="single"></p-tree>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+// 头部
+.header{
+    background: rgba(94, 94, 94, 1);
+    padding-top:  30px;
+    color: #fff;
+}
+.header /deep/ .ui-dropdown{
+    width: 100px!important;
+}
+.header>ul{
+    margin-left: 50px;
+    margin-bottom: 30px;
+    padding: 0;
+}
+.header>ul>li{
+    list-style: none;
+}
+.header>ul .search{
+    margin: 30px 0 0 20px;
+} 
+.header>ul span{
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+    margin-right: 20px;
+}
+.groupBtn>*{
+    margin-right: 10px;
+}
+.groupBtn{
+    height: 60px;
+    line-height: 60px;
+    vertical-align: middle;
+    padding-left: 50px;
+    background: rgba(215, 215, 215, 1)
+}
+.groupBtn .userManager{
+    color: #000;
+    font-weight: 500;
+    font-size: 25px;
+}
+.groupBtn .btn{
+    vertical-align: super!important;
+}
+.table td{
+    text-align: center;
+}
+
+// 新增
+.odialog /deep/ .ui-dialog{
+    width: 900px;
+    padding-bottom: 20px;
+}
+.odialog /deep/ .ui-tabview-panel{
+    border: none;
+    height: 500px;
+    overflow-y: auto;
+}
+.odialog /deep/ .ui-widget-content{
+    border: none!important;
+}
+.odialog .btn{
+    margin-right: 10px;
+} 
+.odialog .one span{
+    display: inline-block;
+    width: 80px;
+    text-align: right;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 10px;
+}
+.odialog .two span{
+    display: inline-block;
+    width: 80px;
+    text-align: right;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 10px;
+}
+.odialog .btn{
+    margin-left: 10px; 
+}
+.three ul ol:last-child,
+.four ul ol:last-child{
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+.three ul ol>li,
+.four ul ol>li{
+    float: left;
+    margin-right: 10px;
+}
+.noUserData{
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    color: #ccc;
+}
+
+
+

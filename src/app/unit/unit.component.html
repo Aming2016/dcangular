@@ -1,0 +1,27 @@
+<p-progressBar *ngIf="!results" mode="indeterminate" [style]="{'height': '3px'}"></p-progressBar>
+
+<div class="ui-g ui-fluid">
+  <div class="ui-g-12 ui-md-1">
+    <button pButton type="button" label="新增" (click)="goAdd()" ></button>
+  </div>
+  <div class="ui-g-12">
+    <p-dataTable [value]="results" [paginator]="true" [rows]="10">
+      <p-column field="hxname" [header]="unitCNname.hxname" sortable="true"></p-column>
+      <p-column field="fangno" [header]="unitCNname.fangno"></p-column>
+      <p-column field="fang" [header]="unitCNname.fang" sortable="true"></p-column>
+      <p-column field="ting" [header]="unitCNname.ting" sortable="true"></p-column>
+      <p-column field="wei" [header]="unitCNname.wei" sortable="true"></p-column>
+      <p-column field="yangtai" [header]="unitCNname.yangtai" sortable="true"></p-column>
+      <p-column field="jzmj" [header]="unitCNname.jzmj+'(m2)'" sortable="true"></p-column>
+      <p-column field="tnmj" [header]="unitCNname.tnmj+'(m2)'" sortable="true"></p-column>
+      <p-column field="hxspecial" [header]="unitCNname.hxspecial"></p-column>
+      <p-column field="memo" [header]="unitCNname.memo"></p-column>
+      <p-column field="ishost" [header]="unitCNname.ishot"></p-column>
+    </p-dataTable>
+  </div>
+</div>
+
+<!--
+<div class="ui-g css3box">
+</div>
+-->

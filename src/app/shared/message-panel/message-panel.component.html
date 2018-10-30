@@ -1,0 +1,18 @@
+<div *ngIf="error != null || message != null" class="ui basic segment"></div>
+
+<div *ngIf="error != null" class="ui padded container negative icon message">
+  <i (click)="error = null" class="close icon"></i>
+  <i class="remove circle outline icon"></i>
+  <div [ngSwitch]="error.message" class="content">
+    <div *ngSwitchCase="keys.no_quiz_event" class="header">
+      没有有奖问答活动
+    </div>
+    <div *ngSwitchCase="keys.participation_times_over" class="header">
+      你不能再参加过此次活动
+    </div>
+    <div *ngSwitchDefault class="header">
+      {{error.message}}
+    </div>
+    <p *ngSwitchCase="keys.participation_times_over">你已参加此活动{{error?.payload?.params[0]}}次</p>
+  </div>
+</div>

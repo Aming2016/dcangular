@@ -1,0 +1,10 @@
+
+<p-dialog header="信息" [(visible)]="display" modal="modal" showEffect="fade" width="400">
+  <p>{{message}}</p>
+  <p-footer>
+    <div class="ui-dialog-buttonpane ui-helper-clearfix">
+      <button *ngIf="options?.showApprove" type="button" pButton icon="fa-check" (click)="display=false" i18n-label="ok-label" label="确定" [routerLink]="navigate()"></button>
+      <button *ngIf="options?.showDeny" type="button" pButton icon="fa-close" (click)="display=false"  i18n-label="cancel-label" label="取消"></button>
+    </div>
+  </p-footer>
+</p-dialog>

@@ -1,0 +1,291 @@
+
+/*
+@作者: 徐横峰
+@邮箱：564297479@qq.com
+@日期：2018年10月10日
+*/
+@import "./assets/css/reset.css";
+@import "./assets/css/resetPrime.css";
+
+
+
+/* You can add global styles to this file, and also import other style files */
+/*
+@media only screen and (max-width: 1080px), only screen and (max-device-width:1080px) {
+  html,body {
+    font-size:16.875px;
+  }
+}
+@media only screen and (max-width: 960px), only screen and (max-device-width:960px) {
+  html,body {
+    font-size:15px;
+  }
+}
+@media only screen and (max-width: 800px), only screen and (max-device-width:800px) {
+  html,body {
+    font-size:12.5px;
+  }
+}
+@media only screen and (max-width: 720px), only screen and (max-device-width:720px) {
+  html,body {
+    font-size:11.25px;
+  }
+}
+@media only screen and (max-width: 640px), only screen and (max-device-width:640px) {
+  html,body {
+    font-size:10px;
+  }
+}
+@media only screen and (max-width: 600px), only screen and (max-device-width:600px) {
+  html,body {
+    font-size:9.375px;
+  }
+}
+@media only screen and (max-width: 540px), only screen and (max-device-width:540px) {
+  html,body {
+    font-size:8.4375px;
+  }
+}
+@media only screen and (max-width: 480px), only screen and (max-device-width:480px) {
+  html,body {
+    font-size:7.5px;
+  }
+}
+@media only screen and (max-width: 414px), only screen and (max-device-width:414px) {
+  html,body {
+    font-size:6.46875px;
+  }
+}
+@media only screen and (max-width: 400px), only screen and (max-device-width:400px) {
+  html,body {
+    font-size:6.25px;
+  }
+}
+@media only screen and (max-width: 375px), only screen and (max-device-width:375px) {
+  html,body {
+    font-size:5.859375px;
+  }
+}
+@media only screen and (max-width: 360px), only screen and (max-device-width:360px) {
+  html,body {
+    font-size:5.625px;
+  }
+}
+@media only screen and (max-width: 320px), only screen and (max-device-width:320px) {
+  html,body {
+    font-size:5px;
+  }
+}
+@media only screen and (max-width: 240px), only screen and (max-device-width:240px) {
+  html,body {
+    font-size:3.75px;
+  }
+}
+*/
+//------------- auto generated end -----------------
+
+.ui.basic.segment.white-bg {
+  background-color: white;
+}
+
+.border-line {
+  border: 1px solid black;
+}
+
+body.root {
+  font-family: 微软雅黑;
+  background-color: #ededed;
+}
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex: $values;
+  -webkit-flex: $values;
+  -ms-flex: $values;
+  flex: $values;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.app-root {
+  background-color: #eaeaea;
+}
+
+.flex-wrapper {
+  @include flexbox();
+}
+
+.flex-item {
+  @include flex(1);
+  //@include order(2);
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-container {
+  min-height: 100%;
+  @include flexbox();
+}
+
+.fill-content {
+  width: 100%;
+  height: 100%;
+}
+
+.vcenter-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.disp-table {
+  display: table;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.border-black {
+  border: solid;
+  border-width: 1px;
+  border-color: black;
+}
+
+.app-top-line {
+  border-top: 1px solid rgba(34, 36, 38, .15) !important;
+}
+
+.app-bottom-line {
+  border-bottom: 1px solid rgba(34, 36, 38, .15) !important;
+}
+
+.ui.segment.app-padded {
+  height: 2rem;
+}
+
+.container {
+  display: -webkit-flex;
+  display: flex;
+  min-height: 80em;
+}
+
+nav {
+  width: 200px;
+}
+
+.flex-col {
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+.col-button {
+  width: 3.5rem;
+  text-align: center
+}
+
+p-steps.approve li.ui-steps-item.ui-state-highlight a.ui-menuitem-link span.ui-steps-number{
+  background-color: red;
+}
+
+div.ui-table-loading-content i.fa.fa-spin {
+  color: white;
+}
+
+p-steps.approve li.ui-steps-item a.ui-menuitem-link span.ui-steps-number{
+  background-color: green;
+}
+
+p-steps.approve li.ui-steps-item.ui-state-highlight~li a.ui-menuitem-link span.ui-steps-number{
+  background-color: grey;
+}
+
+
+.layout-wrapper .layout-main .layout-breadcrumb ul li:nth-child(even) {
+  font-size: 100%
+}
+
+.fa-spin {
+  -webkit-animation: fa-spin 2s infinite linear;
+  animation: fa-spin 2s infinite linear;
+}
+.fa-pulse {
+  -webkit-animation: fa-spin 1s infinite steps(8);
+  animation: fa-spin 1s infinite steps(8);
+}
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+.fa-spin {
+  -webkit-animation: fa-spin 2s infinite linear;
+  animation: fa-spin 2s infinite linear;
+}
+.fa-pulse {
+  -webkit-animation: fa-spin 1s infinite steps(8);
+  animation: fa-spin 1s infinite steps(8);
+}
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+.fa-circle-o-notch:before {
+  content: "track_changes";
+}
+
+

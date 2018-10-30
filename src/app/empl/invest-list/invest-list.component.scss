@@ -1,0 +1,411 @@
+*{
+        margin:0;
+        padding:0;
+}
+.titleul{
+        width:100%;
+        padding:30px 0;
+        background:rgb(94, 94, 94);
+        list-style: none;
+        span{
+                font-size:16px;
+        }
+        >li:nth-of-type(1){   
+                >p:nth-of-type(1){
+                        margin-left:20px;
+                        margin-right:30px;
+                }
+                >p{
+                        color:#ffffff;
+                        display: inline-block;
+                }
+                
+        }
+        >li:nth-of-type(2){   
+                margin-top:10px;
+                >P:nth-last-of-type(1){
+                        margin-right:40px;
+                }
+                >p:nth-of-type(1){
+                        margin-left:36px;
+                        margin-right:62px;
+                }
+                >p:nth-of-type(2){
+                        margin-right:50px;
+                }
+                >p{
+                        color:#ffffff;
+                        display: inline-block;
+                }
+                
+                
+        }
+}
+#titleadd{
+        width:100%;
+        padding:10px 0;
+        font-size:16px;
+        >span{
+                font-size:16px;
+                margin-left:30px;
+                margin-right:20px;
+        }
+}
+.contentitem{
+        width:49.5% !important;
+        height:170px !important;
+        box-sizing:border-box !important;
+        border:1px solid #333333;
+        margin:2.5px 0;
+        position: relative;
+        &:nth-of-type(2n-1){
+                margin-right:1% !important; 
+
+        }     
+}
+.contentitem>ul{
+        overflow: hidden;
+}
+.contentitem>ul>li{
+      list-style: none;
+      width:35%;
+      float:left;  
+      margin-top:15px;
+      overflow: hidden;
+      >p{
+              width:50%;
+              float:left;
+              &:nth-of-type(1){
+                      text-align: right;
+                      font-size:12px;
+              }
+              &:nth-of-type(2){
+                text-align: left;
+                font-size:14px;
+                font-weight: bold;
+        }
+      }
+}
+.contentitem>ul>li:nth-last-of-type(1){
+        width:70%;
+        >p:nth-of-type(1){
+                width:25%;
+        }
+        >p:nth-of-type(2){
+                width:75%;
+        }
+}
+#contentbtnone{
+        position: absolute;
+        right:60px;
+        top:20px ;
+}
+#contentbtntwo{
+        position: absolute ;
+        right:60px;
+        top:67px;
+}
+#contentbtnthree{
+        position: absolute ;
+        right:60px;
+        bottom:20px;
+}
+
+// 新增
+.odialog /deep/ .ui-dialog{
+        width: 50%;
+        padding-bottom: 10px;
+        background: #fff;
+    }
+    .odialog /deep/ .ui-tabview-panel{
+        border: none;
+        height: 400px;
+        overflow-y: auto;
+    }
+    .odialog /deep/ .ui-widget-content{
+        border: none!important;
+    }
+    .l-content,
+    .r-content{
+        width: 50%;
+    }
+    .toutextarea{
+            width:100%;
+            margin-top:10px;
+            span{
+                    vertical-align: top;
+            }
+           >textarea{
+                   width:80%;
+                   height:100px;
+                   vertical-align: top;
+           }
+    }
+    .odialog .one span{
+        display: inline-block;
+        width: 100px;
+        text-align: right;
+        height: 35px;
+        line-height:35px;
+        margin-right: 10px;
+    }
+    .odialog .btn{
+        margin-left: 10px; 
+        margin-top:10px;
+    }
+    .two /deep/ .add{
+            margin-right:30px;
+            margin-bottom:10px;
+    }
+    .odialogtwo /deep/ .btn{
+        margin-right:10px;
+}
+    .three /deep/ .add{
+        margin-right:30px;
+        margin-bottom:10px;
+}
+    .listbox tr td{
+            text-align: center !important;
+    }
+    .ul_boxalert>li{
+        margin-bottom:40px !important;
+        >span{
+                margin-right:20px;
+        }
+        &:nth-of-type(1)>span{
+                margin-left:15px;
+        }
+    }
+    .ul_boxtwoalert{
+            min-width:350px;
+            margin-right:250px;
+            overflow: hidden;
+            >li:nth-of-type(2){
+                    >p{
+                        width:20%;
+                        text-align: right;
+                        display: inline-block;
+                        margin-right:10px;
+                    }
+                    >input{
+                        width:50% !important;
+                    } 
+                    button{
+                            width:30%;
+                    }
+            }
+            >li{
+                    width:50%;
+                    float:left;
+                    >p{
+                        width:30%;
+                        text-align: right;
+                        display: inline-block;
+                        margin-right:10px;
+                    }
+            }
+
+    }
+    #namecontent{
+            width:100%;
+            overflow: hidden;
+            margin-top:10px;
+            >div{
+                    width:45%;
+                    height:200px;
+                    float:left;
+                    border:1px solid #333333;
+            }
+            >button{
+                    width:8%;
+                    float:left;
+                    margin:0 1%;
+        }
+    }
+    #titledetails{
+            width:1000px;
+            height:150px;
+            position: relative;
+            border-bottom:1px solid #333333;
+            box-sizing: border-box;
+            >ul{
+                width:800px;
+                margin-top:20px;
+                >li{
+                        width:266px;
+                        line-height:30px;
+                        display: inline-block;
+                        >p:nth-of-type(1){
+                                width:40%;
+                                float:left;
+                                text-align: right;
+                        }
+                        >p:nth-of-type(2){
+                              width:60%;
+                              float:left;
+                        }
+                }
+        }
+    }
+    #contenttitledetails{
+            width:1000px;
+            height:590px;
+            margin-top:10px;
+            >div:nth-of-type(1){
+                    width:450px;
+                    height:100%;
+                    border-right:1px solid #333333;
+                    box-sizing: border-box;
+                    float:left;
+            };
+            >div:nth-of-type(2){
+                    width:550px;
+                    height:100%;
+                    float:left;
+            }
+    }
+    #titleboxdiv{
+          width:100%;
+          height:40px;  
+          >p{
+                  width:350px;
+                  height:100%;
+                  background:rgb(242, 242, 242);
+                  line-height: 40px;
+                  >span:nth-of-type(1){
+                          font-size:18px;
+                          font-weight: bold;
+                          margin-left:30px;
+                          margin-right:20px;
+                  };
+                  >span::nth-of-type(2){
+                          font-size:14px;
+                  }
+          }
+    }
+    .gougubtn{
+            position: absolute;
+            right:50px;
+            top:60px;
+    }
+    #myname{
+        width:70%;
+        height:40px;
+        margin-left:10px;
+        background:rgb(242, 242, 242);   
+        line-height: 40px;
+        >span:nth-of-type(1){
+                font-size:18px;
+                font-weight: bold;
+                margin-left:30px;
+                margin-right:20px;
+        };
+        >span::nth-of-type(2){
+                font-size:14px;
+        }
+    }
+    #my_ul{
+            width:100%;
+            height:540px;
+            margin-top:10px;
+            >li:nth-of-type(1){
+                    width:45%;
+                    margin-right:5%;
+                    >div:nth-of-type(1){
+                            width:100%;
+                            >p{
+                                    width:100%;
+                                    text-align: center;
+                                    font-size:26px;
+                                    line-height: 40px;
+                            }
+                    }
+                    >div:nth-of-type(2){
+                            width:100%;
+                            height:460px;
+                            >img{
+                                    width:100%;
+                            }
+                    }
+            }
+            >li{
+                    width:48%;
+                    height:100%;
+                    float:left;
+            }
+            >li:nth-of-type(2){
+                font-size:20px;
+                >div:nth-of-type(1){
+                        margin-bottom:30px;
+                }
+            }
+    }
+
+    #referral{
+            font-size:18px;
+            line-height: 40px;
+            margin-left:20px;
+            font-weight: bold;
+    }
+    #ulli_1{
+            margin-left:20px;
+            >li:nth-of-type(1){
+                    width:40%;
+                    margin-right:10%;
+                    height:450px;
+                    border:1px solid #333333;
+                    box-sizing: border-box;
+                    overflow-y: scroll;
+                    font-size:16px;
+            }
+            >li{
+                    width:50%;
+                    height:450px;
+                    float: left;
+            }
+            >li:nth-of-type(2){
+                    >img{
+                            width:100%;
+                            height:180px;
+                            margin-bottom:20px;
+                    }
+            }
+    }
+
+    .odialog2 ul{
+        position: relative;
+        margin: 0 80px 130px;
+    }
+    .odialog2 li{
+        margin-bottom: 30px;
+    }
+    .odialog2 li span{
+        width: 100px;
+        text-align: right;
+        margin-right: 10px; 
+    }
+    .odialog2 .table{
+        width: 350px;
+        margin: 10px 0;
+    }
+    .odialog2 /deep/ .save .ui-button{
+        margin-right: 0;
+    }
+    .odialog2 .list {
+        overflow-y: scroll;
+        width: 500px;
+        height: 300px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+    }
+    .odialog2 .list ul{
+        margin: 0;
+    }
+    .odialog2 .list li{
+        height: 100px;
+        margin: 20px 20px 0;
+        background: red;
+    }
+    .odialog2 .list li:last-child{
+        margin-bottom: 20px;
+    }

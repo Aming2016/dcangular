@@ -1,0 +1,5 @@
+<p-tree [value]="treeNodes"
+        [style]="treeStyle"
+        selectionMode="single"
+        [(selection)]="selectedFile"
+        (onNodeSelect)="nodeSelect($event)"></p-tree>

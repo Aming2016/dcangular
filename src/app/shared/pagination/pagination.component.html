@@ -1,0 +1,34 @@
+<div *ngIf="true" class="ui center aligned basic segment">
+  <div class="ui pagination menu">
+    <a *ngIf="!isFewPages()" class="item" (click)="pageGroup = pageGroup - 1">
+      <i class="icon angle double left"></i>
+    </a>
+    <ng-container *ngFor="let pg of pageGroupArray">
+      <a class="item" [class.active]="page == pg" (click)="page = pg">
+        {{pg + 1}}
+      </a>
+    </ng-container>
+    <div *ngIf="isManyPages()" (click)="selectPage()" class="item ui icon top left pointing upward dropdown button">
+      <i class="icon angle double up"></i>
+    </div>
+
+    <a *ngIf="!isFewPages()" class="item" (click)="pageGroup = pageGroup + 1">
+      <i class="icon angle double right"></i>
+    </a>
+  </div>
+</div>
+
+
+<div #dialog class="ui modal">
+  <div class="header">跳转到页面</div>
+  <div class="content">
+    <div class="ui equal width celled center aligned grid">
+      <div *ngFor="let rowArr of pageMatrix" class="row">
+        <ng-container *ngFor="let colIdx of rowArr" >
+          <!--<div *ngIf="colIdx != null" class="column">{{colIdx}}</div>-->
+          <div (click)="dialogClick(colIdx)" class="column">{{colIdx!=null?(colIdx + 1):""}}</div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

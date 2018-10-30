@@ -1,0 +1,60 @@
+
+*{
+  margin: 0;
+  padding: 0;
+}
+// 头部
+.header{
+  background: rgba(94, 94, 94, 1);
+  padding-top:  30px;
+  color: #fff;
+}
+.header>ul{
+  margin-left: 50px;
+  margin-bottom: 30px;
+  padding: 0;
+}
+.header>ul>li{
+  margin-bottom: 30px;
+}
+.header>ul .search{
+  margin-left: 30px;
+}  
+.header>ul span{
+  display: inline-block;
+  width: 90px;
+  text-align: right;
+  margin-right: 20px;
+}
+.groupBtn{
+  height: 60px;
+  line-height: 60px;
+  vertical-align: middle;
+  padding-left: 50px;
+  background: rgba(215, 215, 215, 1)
+}
+.groupBtn .companyManager{
+  color: #000;
+  font-weight: 500;
+  font-size: 25px;
+  margin-right: 10px;
+}
+.groupBtn .btn{
+  vertical-align: super!important;
+}
+.table td{
+  text-align: center;
+}
+
+// 新增
+.odialog .one span{
+  display: inline-block;
+  width: 80px;
+  text-align: right;
+  height: 40px;
+  line-height: 40px;
+  margin-right: 10px;
+}
+.odialog .btn{
+  margin-left: 10px;
+}

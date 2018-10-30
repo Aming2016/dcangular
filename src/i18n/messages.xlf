@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="af09a0e18f4200fdb729133ddcd5bb43d52439aa" datatype="html">
+        <source>确定</source>
+        <target/>
+        <note priority="1" from="description">buttonApprove</note>
+      </trans-unit>
+      <trans-unit id="f6f3be110e7043e3cfe71a7bd75b8b3be79bff5d" datatype="html">
+        <source>取消</source>
+        <target/>
+        <note priority="1" from="description">buttonDeny</note>
+      </trans-unit>
+      <trans-unit id="9828cf17fd02abcf76d4b394b5abc58a61788677" datatype="html">
+        <source>谢谢你的参与</source>
+        <target/>
+        <note priority="1" from="description">thanks participate</note>
+      </trans-unit>
+      <trans-unit id="484b91a24c345beddc13e665582c0343358a6099" datatype="html">
+        <source>你答对了<x id="INTERPOLATION"/>题,获得了<x id="INTERPOLATION_1"/>积分</source>
+        <target/>
+        <note priority="1" from="description">answer quiz result upper</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
